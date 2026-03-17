@@ -138,7 +138,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "[audit].[loadstatuss]",
+					"storedProcedureName": "[audit].[loadstatus]",
 					"storedProcedureParameters": {
 						"dataread": {
 							"value": {
@@ -196,7 +196,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "[audit].[loadstatuss]",
+					"storedProcedureName": "[audit].[loadstatus]",
 					"storedProcedureParameters": {
 						"dataread": {
 							"value": {
