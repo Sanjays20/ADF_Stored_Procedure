@@ -7,10 +7,6 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "adf065"
 		},
-		"LS_BLOB_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'LS_BLOB'"
-		},
 		"LS_ONPREM_SQL_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_ONPREM_SQL'"
@@ -53,9 +49,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"LS_BLOB_connectionString": {
-						"value": "[parameters('LS_BLOB_connectionString')]"
 					},
 					"LS_ONPREM_SQL_password": {
 						"value": "[parameters('LS_ONPREM_SQL_password')]"
