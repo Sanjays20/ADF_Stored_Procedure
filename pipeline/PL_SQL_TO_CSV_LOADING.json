@@ -175,6 +175,70 @@
 					"referenceName": "LS_ONPREM_SQL",
 					"type": "LinkedServiceReference"
 				}
+			},
+			{
+				"name": "Error",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "CPY_DATA_SQL_CSV",
+						"dependencyConditions": [
+							"Failed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[audit].[loadstatuss]",
+					"storedProcedureParameters": {
+						"dataread": {
+							"value": {
+								"value": "@activity('CPY_DATA_SQL_CSV').output.rowsRead",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"errorid": {
+							"value": {
+								"value": "@activity('CPY_DATA_SQL_CSV').output.errors[0].code",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"errormessage": {
+							"value": {
+								"value": "@activity('CPY_DATA_SQL_CSV').output.errors[0].meesage",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"loadstatus": {
+							"value": {
+								"value": "@activity('CPY_DATA_SQL_CSV').output.executionDetails[0].status",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"TableName": {
+							"value": {
+								"value": "@concat(pipeline().parameters.schemaname,'.',pipeline().parameters.tablename)",
+								"type": "Expression"
+							},
+							"type": "String"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "LS_ONPREM_SQL",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"parameters": {
