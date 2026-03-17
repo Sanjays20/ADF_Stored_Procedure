@@ -5,8 +5,14 @@
 		"factoryName": {
 			"value": "adf065"
 		},
+		"LS_ADLS_accountKey": {
+			"value": ""
+		},
 		"LS_ONPREM_SQL_password": {
 			"value": ""
+		},
+		"LS_ADLS_properties_typeProperties_url": {
+			"value": "https://adls89.dfs.core.windows.net/"
 		},
 		"LS_ONPREM_SQL_properties_typeProperties_server": {
 			"value": "localhost"

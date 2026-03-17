@@ -7,9 +7,17 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "adf065"
 		},
+		"LS_ADLS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS'"
+		},
 		"LS_ONPREM_SQL_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_ONPREM_SQL'"
+		},
+		"LS_ADLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adls89.dfs.core.windows.net/"
 		},
 		"LS_ONPREM_SQL_properties_typeProperties_server": {
 			"type": "string",
@@ -50,8 +58,14 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"LS_ADLS_accountKey": {
+						"value": "[parameters('LS_ADLS_accountKey')]"
+					},
 					"LS_ONPREM_SQL_password": {
 						"value": "[parameters('LS_ONPREM_SQL_password')]"
+					},
+					"LS_ADLS_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_properties_typeProperties_url')]"
 					},
 					"LS_ONPREM_SQL_properties_typeProperties_server": {
 						"value": "[parameters('LS_ONPREM_SQL_properties_typeProperties_server')]"
