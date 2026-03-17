@@ -35,7 +35,7 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "Employee"
+			"table": "Employee_w"
 		}
 	}
 }
