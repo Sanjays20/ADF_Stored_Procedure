@@ -327,7 +327,7 @@
 								},
 								"loadstatus": {
 									"value": {
-										"value": "@activity('CPY_DATA_SQL_CSV').output.executionDetails[0]",
+										"value": "@activity('CPY_DATA_SQL_CSV').output.executionDetails[0].message",
 										"type": "Expression"
 									},
 									"type": "String"
