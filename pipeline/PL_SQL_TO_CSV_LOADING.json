@@ -157,7 +157,7 @@
 						},
 						"loadstatus": {
 							"value": {
-								"value": "@activity('CPY_DATA_SQL_CSV').output.executionDetails[0].message",
+								"value": "Sucess",
 								"type": "Expression"
 							},
 							"type": "String"
@@ -214,7 +214,7 @@
 						},
 						"errormessage": {
 							"value": {
-								"value": "@activity('CPY_DATA_SQL_CSV').output.errors[0].meesage",
+								"value": "Failed",
 								"type": "Expression"
 							},
 							"type": "String"
