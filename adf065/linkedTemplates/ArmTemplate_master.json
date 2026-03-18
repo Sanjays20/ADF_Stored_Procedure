@@ -31,6 +31,14 @@
 			"type": "string",
 			"defaultValue": "admin"
 		},
+		"TRG_SP_properties_PL_SQL_TO_CSV_LOADING_parameters_schemaname": {
+			"type": "string",
+			"defaultValue": "dbo"
+		},
+		"TRG_SP_properties_PL_SQL_TO_CSV_LOADING_parameters_tablename": {
+			"type": "string",
+			"defaultValue": "Employee"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -75,6 +83,12 @@
 					},
 					"LS_ONPREM_SQL_properties_typeProperties_userName": {
 						"value": "[parameters('LS_ONPREM_SQL_properties_typeProperties_userName')]"
+					},
+					"TRG_SP_properties_PL_SQL_TO_CSV_LOADING_parameters_schemaname": {
+						"value": "[parameters('TRG_SP_properties_PL_SQL_TO_CSV_LOADING_parameters_schemaname')]"
+					},
+					"TRG_SP_properties_PL_SQL_TO_CSV_LOADING_parameters_tablename": {
+						"value": "[parameters('TRG_SP_properties_PL_SQL_TO_CSV_LOADING_parameters_tablename')]"
 					}
 				}
 			},

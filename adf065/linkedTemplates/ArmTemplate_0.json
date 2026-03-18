@@ -30,6 +30,14 @@
 		"LS_ONPREM_SQL_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "admin"
+		},
+		"TRG_SP_properties_PL_SQL_TO_CSV_LOADING_parameters_schemaname": {
+			"type": "string",
+			"defaultValue": "dbo"
+		},
+		"TRG_SP_properties_PL_SQL_TO_CSV_LOADING_parameters_tablename": {
+			"type": "string",
+			"defaultValue": "Employee"
 		}
 	},
 	"variables": {
@@ -424,12 +432,47 @@
 						"defaultValue": "Employee"
 					}
 				},
-				"annotations": []
+				"annotations": [],
+				"lastPublishTime": "2026-03-17T15:29:46Z"
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DS_SQL_TABLE')]",
 				"[concat(variables('factoryId'), '/datasets/DS_CSV_FILE')]",
 				"[concat(variables('factoryId'), '/linkedServices/LS_ONPREM_SQL')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/TRG_SP')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "PL_SQL_TO_CSV_LOADING",
+							"type": "PipelineReference"
+						},
+						"parameters": {
+							"schemaname": "[parameters('TRG_SP_properties_PL_SQL_TO_CSV_LOADING_parameters_schemaname')]",
+							"tablename": "[parameters('TRG_SP_properties_PL_SQL_TO_CSV_LOADING_parameters_tablename')]"
+						}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Minute",
+						"interval": 1,
+						"startTime": "2026-03-18T20:25:00",
+						"endTime": "2026-03-18T20:25:00",
+						"timeZone": "India Standard Time"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/PL_SQL_TO_CSV_LOADING')]"
 			]
 		}
 	]

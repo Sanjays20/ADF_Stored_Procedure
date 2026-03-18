@@ -22,6 +22,12 @@
 		},
 		"LS_ONPREM_SQL_properties_typeProperties_userName": {
 			"value": "admin"
+		},
+		"TRG_SP_properties_PL_SQL_TO_CSV_LOADING_parameters_schemaname": {
+			"value": "dbo"
+		},
+		"TRG_SP_properties_PL_SQL_TO_CSV_LOADING_parameters_tablename": {
+			"value": "Employee"
 		}
 	}
 }
