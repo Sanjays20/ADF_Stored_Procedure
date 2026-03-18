@@ -3,7 +3,18 @@
 	"properties": {
 		"annotations": [],
 		"runtimeState": "Started",
-		"pipelines": [],
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "PL_SQL_TO_CSV_LOADING",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"schemaname": "dbo",
+					"tablename": "Employee"
+				}
+			}
+		],
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
